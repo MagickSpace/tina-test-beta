@@ -1,8 +1,10 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "lib": [
-      "ESNext"
+      "ESNext",
+	  "DOM",
+	  "DOM.Iterable"
     ],
     "target": "ESNext",
     "module": "ESNext",
@@ -20,8 +22,13 @@
     "useUnknownInCatchVariables": true,
     "noPropertyAccessFromIndexSignature": true,
     "strictNullChecks": true,
-    "baseUrl": "/workspaces/tina-test-beta",
+    "baseUrl": ".",
     "verbatimModuleSyntax": true,
+	"plugins": [
+		{
+		  "name": "@astrojs/ts-plugin"
+		},
+	  ],
     "paths": {
       "@/components/*": [
         "src/components/*.astro"
